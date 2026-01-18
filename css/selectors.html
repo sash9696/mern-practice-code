@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my-class{
+            background-color: aquamarine;
+            width: 100px;
+            height: 100px;
+        }
+
+        #signup{
+            color: red;
+        }
+
+        [data-type="primary"]{
+            color: blue;
+        }
+
+        /* a href that contains .pdf */
+        /* [href*='.pdf']{
+            color: red;
+        } */
+
+        /* a href that starts wiyh my */
+        /* [href^='my']{
+            color: red;
+        } */
+
+        /* a href that ends with .pdf */
+        [href$='.pdf']{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div class="my-class class2 class3"></div>
+    <button id="signup">Sign up</button>
+    <p class="my-class">This is a paragraph</p>
+
+    <div data-type="primary" >content</div>
+
+    <h2>Downloads</h2>
+
+    <ul>
+        <li>
+            <a href="my-image.jpg">An example image</a>
+        </li>
+        <li>
+            <a href="my-document.pdf">An example document</a>
+        </li>
+        <li>
+            <a href="my-document.pdf">Another example document</a>
+        </li>
+    </ul>
+
+</body>
+</html>
