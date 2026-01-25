@@ -1,0 +1,105 @@
+
+
+
+<!-- 
+position:
+
+static -> default-> top right bottom left properties have no effect
+relative ->relative to its original position
+fixed -> relative to its viewport
+absolute -> it is positioned relative to its nearest ancestor(go out from the normal document flow and can also overlap the elements)
+sticky -> combination of relative and fixed depending on scroll position
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* div.static{
+            position: static;
+            border: 2px solid green;
+            top: 100px;
+        }
+
+        div.relative{
+            position: relative;
+            border: 2px solid green;
+            top: 100px;
+        }
+
+        div.fixed{
+            position: fixed;
+            border: 2px solid green;
+            top: 0;
+            left:0;
+            width: 300px;
+            height: 200px;
+        } */
+
+        div.absolute{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 200px;
+            height: 100px;
+            border: 3px solid green;
+        }
+        div.relative{
+            position: relative;
+            width: 400px;
+            height: 200px;
+            border: 3px solid red;
+        }
+
+        div.sticky{
+            position: sticky;
+            top: 0;
+            padding: 5px;
+            border: 2px solid gray;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <h1>Lorem ipsum dolor sit amet consectetur.</h1> -->
+
+    <!-- use this p tag inc ase of position fixed -->
+    <!-- <p style="height: 300vh;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum quisquam sit repellendus! Quam, voluptas necessitatibus quae minima molestias totam praesentium vitae nihil quibusdam modi assumenda. Labore dolorum itaque magnam? Consequuntur?</p> -->
+    <!-- <div class="fixed">
+        This div has position fixed
+    </div> -->
+<!-- <div class="relative">
+    this is relative element
+    <div class="absolute">
+        This div has position absolute
+    </div>
+</div> -->
+
+
+
+<!-- sticky -->
+
+<h1>Lorem ipsum dolor sit amet consectetur.</h1>
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam illo, minima illum deserunt quis odio. Laudantium accusantium corrupti tempore provident aspernatur laboriosam debitis, nihil beatae dolores voluptatum eius voluptate sed?</p>
+
+
+<div class="sticky">
+    This element has position sticky
+</div>
+
+<div style="padding-bottom: 2000px;">
+    <p>Scroll to top</p>
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam dignissimos perferendis fuga, temporibus voluptates repudiandae dolores vitae neque placeat suscipit aperiam veniam maiores nam rem in officia ipsam at eum.
+    </p>
+</div>
+    
+</body>
+</html>

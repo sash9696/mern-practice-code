@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* Desltop first */
+        /* body{
+            background-color: lightblue;
+            font-size: 24px;
+        } */
+
+        /* @media (max-width: 600px){
+            body{
+                background-color: lightcoral;
+                font-size: 16px;
+            }
+        } */
+
+
+        /* mobile first */
+
+        body{
+            background-color: lightgreen;
+            font-size: 16px;
+        }
+
+
+        @media (min-width: 600px){
+            body{
+                background-color: lightblue;
+                font-size: 24px;
+            }
+        }
+
+        /* 
+        two approaches
+
+        1. max-width -> desktop first apporach
+        @media (max-width: 600px){
+
+        0px ---------600-px stops
+           applies
+
+        2. min-width -> Mobile first 
+        @media (min-width: 600px){
+
+        0px ---------600-px ----------->
+           stops                appplies
+
+        
+        */
+    </style>
+</head>
+<body>
+    <h2>Media queries</h2>
+    <!-- help us apply css when certin conditions are true -->
+
+    Resize the browser window
+</body>
+</html>

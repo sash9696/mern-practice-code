@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <style>
+        body{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #111;
+        }
+
+        .box{
+            width: 120px;
+            height: 120px;
+            background: #4caf50;
+            border-radius: 12px;
+
+            /* animation: moveBox 2s ease-in-out infinite ; */
+
+            animation-name: moveBox;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+
+        }
+
+        @keyframes moveBox {
+
+            0%{
+                transform: translateX(0);
+            }
+
+            50%{
+                transform: translateX(150px);
+
+            }
+
+            100%{
+                transform: translateX(0);
+            }
+            
+        }
+    </style> -->
+
+    <!-- spinner -->
+
+    <style>
+        body{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .spinner{
+            width: 60px;
+            height: 60px;
+            border: 6px solid red;
+            border-top-color: blue;
+            border-radius: 50%;
+
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- transiotions are b/w states
+     Keyframes are timelines
+
+     defines
+     where animation starts
+     where it ends
+     what happens in between
+    -->
+
+
+    <!-- <div class="box"></div> -->
+
+    <div class="spinner">
+
+    </div>
+    
+</body>
+</html>

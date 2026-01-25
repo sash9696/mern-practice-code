@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .btn{
+            padding: 16px 32px;
+            background-color: aqua;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+
+            /* transition will always go to the original state */
+            transition: all 0.3s cubic-bezier(1, -0.08, 0.84, 1.28);;
+        }
+
+        .btn:hover{
+            background-color: antiquewhite;
+            /* transform: scale(1.1); */
+            transform: translateY(-10px);
+        }
+
+        /* animatable properties vs non animatable properties */
+
+
+
+        /* Good GPU friendly
+        
+        use transform, opacity
+
+        Expensive/ avoid
+        width. height, top, left
+        
+        
+        */
+
+    </style>
+</head>
+<body>
+
+    <div  class="btn">Hover me</div>
+    
+</body>
+</html>
