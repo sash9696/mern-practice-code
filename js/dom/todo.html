@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .app{
+            background: white;
+            width: 400px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        h2{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-group{
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        input{
+            flex:1;
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        button{
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .add-btn{
+            background: #4caf50;
+            color: white;
+        }
+
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+
+        <h2>Todo App</h2>
+
+        <!-- Input -->
+
+        <div class="input-group">
+            <input id="todoInput" placeholder="Enter a todo"/>
+            <button class="add-btn" id="addBtn">Add</button>
+        </div>
+
+
+        <!-- List -->
+
+        <ul id="todoList">
+
+        </ul>
+
+        <p class="empty" id="emptyMsg">No todos yet</p>
+    </div>
+
+
+    <script>
+        // input
+        // button to add todo
+        // list todos
+        // crud
+
+        // state
+        let todos = [];
+
+        // select elements
+
+        const input  = document.querySelector('#todoInput');
+        const addBtn = document.querySelector('#addBtn');
+        const list = document.querySelector('#todoList');
+        const emptyMsg = document.querySelector('#emptyMsg');
+
+
+        // render function
+
+        function renderTodos(){
+            list.innerHTML = "";
+            // create the elemets and then add todo
+            if(todos.length === 0){
+                emptyMsg.style.display = 'block';
+                return;
+            }
+            emptyMsg.style.display = 'none';
+            todos.forEach(function(todo, index){
+                const li = document.createElement("li");
+
+                const text = document.createElement("span");
+                text.textContent = todo.text;
+
+                const actions = document.createElement('div');
+                actions.className = "actions"
+
+                // edit button
+
+                const editBtn = document.createElement('button');
+
+                editBtn.textContent = todo.isEditing ? "Save" : "Edit";
+                editBtn.className = todo.isEditing ? 'save-btn' : 'edit-btn';
+
+                editBtn.addEventListener('click', function(){
+                    if(todo.isEditing){
+                       const newValue = text.querySelector("input").value;
+                       todo.text = newValue;
+                       todo.isEditing = false;
+                    }else{
+                        todo.isEditing = true;
+                    }
+                    console.log(todos)
+                    renderTodos();
+                })
+
+
+                // delete button
+
+                const deleteBtn = document.createElement('button');
+
+                deleteBtn.textContent = "Delete";
+                deleteBtn.className = "delete-btn";
+
+                deleteBtn.addEventListener('click', function(){
+
+                    todos.splice(index, 1);
+                    renderTodos();
+                })
+
+                // Edit mode
+                if(todo.isEditing){
+                    const input  = document.createElement('input');
+                    input.value = todo.text;
+                    text.textContent = "";
+                    text.append(input)
+                }
+
+                actions.append(editBtn, deleteBtn);
+
+                li.append(text,actions);
+
+                list.appendChild(li);
+
+
+            } )
+
+            
+
+
+        }
+
+
+        addBtn.addEventListener('click', function(){
+            const value = input.value.trim();
+
+            if(value === "") return;
+
+            const todo = {
+                text:value,
+                isEditing:false
+            };
+            todos.push(todo);
+            input.value = "";
+            renderTodos();
+        })
+
+
+        // Intial render
+        renderTodos()
+
+
+
+
+
+    </script>
+</body>
+</html>

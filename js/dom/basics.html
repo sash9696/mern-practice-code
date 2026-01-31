@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">DOM</h1>
+
+    <button id="btn">Click me</button>
+
+    <h3>Count: <span id="count">0</span></h3>
+
+    <script>
+
+        // Document object model
+        //DOM is javscript's view of the webpage
+        //think of it like a tree of elements javacript can read and change
+        //becuse the browser exposes the page as objects javsacript can modify
+
+        // console.dir(document)
+
+        //querySelector can take class selector a element or id selector
+        let title = document.querySelector('#title');
+
+        let button = document.querySelector('#btn');
+
+        let countValue = document.querySelector('#count');
+
+
+        let count  = 0
+
+        
+        button.addEventListener('click', function(){
+            // alert('clicked')
+            count ++;
+            // console.log(count)
+
+            countValue.innerText = count
+        })
+
+
+        // console.dir(title)
+
+        title.textContent = 'Welcome !'
+        title.style.color = 'Blue'
+        title.style.fontSize = "32px"
+
+        
+
+
+    </script>
+</body>
+</html>
